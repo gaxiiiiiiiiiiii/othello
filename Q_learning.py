@@ -75,7 +75,8 @@ class Q_learning:
         for i in range(trial_num):
             winner = self.play_game(white_algo=white_algo)
             result[winner] += 1
-        print(result)
+        if show:
+            print(result)
 
-    def save_acton_values(self, filename):
+    def save_action_values(self, filename):
         self.action_values.to_csv(filename)
